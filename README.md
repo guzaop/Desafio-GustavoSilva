@@ -5,10 +5,14 @@ Código desenvolvido por: Gustavo Bandeira da Silva
 O código foi dividido entre cinco arquivos: model, train e teste
 
 Ferramentas utilizadas:
--Keras (https://github.com/keras-team/keras),
--Augmentor (https://github.com/mdbloice/Augmentor),
--Numpy (https://github.com/numpy/numpy),
--Cv2 (https://github.com/opencv/opencv/tree/master/samples/python),
+
+-Keras (https://github.com/keras-team/keras)
+
+-Augmentor (https://github.com/mdbloice/Augmentor)
+
+-Numpy (https://github.com/numpy/numpy)
+
+-Cv2 (https://github.com/opencv/opencv/tree/master/samples/python)
 
 #Obs: o programa só funcionara com imagens bmp;
 #Obs: o arquivo model-3000.h5 contém os pesos da rede neural treinada com 3000 imagens
