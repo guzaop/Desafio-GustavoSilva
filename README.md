@@ -19,7 +19,7 @@ Ferramentas utilizadas:
 #Obs2: o arquivo model-250.h5 contém os pesos da rede neural treinada com 250 imagens, e assim respectivamente
 
 Para treinar utilize train.py:
-Usage: python train.py <com_anel_directory> <sem_anel_directory> [model_save_name.h5]
+Usage: python train.py <com_anel_directory> <sem_anel_directory> [model_save_name.h5] [numero de imagens adicionais para treino]
 
 Para testar utilize test.py:
 Usage: python test.py <weights_filename> <test_image_directory>
