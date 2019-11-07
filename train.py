@@ -9,11 +9,13 @@ import shutil
 import os
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print('''Usage: python train.py <com_anel_directory> <sem_anel_directory> [model_save_name.h5]''')
+    if len(sys.argv) <= 4 or len(sys.argv) > 5:
+        print('''Usage: python train.py <com_anel_directory> <sem_anel_directory> [model_save_name.h5] [numero de imagens adicionais]''')
+        exit()
     else:
         com_anel_directory = sys.argv[1]
         sem_anel_directory = sys.argv[2]
+        n_augment = int(sys.argv[4])
 
         if os.path.exists(com_anel_directory + '/augmented') and os.path.isdir(com_anel_directory + '/augmented'):
             shutil.rmtree(com_anel_directory + '/augmented')
@@ -27,7 +29,7 @@ if __name__ == "__main__":
         p.flip_left_right(probability=0.5)
         p.zoom_random(probability=0.5, percentage_area=0.95)
         p.resize(probability=1.0, width=246, height=205)
-        p.sample(250)
+        p.sample(n_augment)
         print("Data augmentation done on directory '%s'." % (com_anel_directory))
 
         print("Found %d items on directory '%s', starting data augmentation..." % (len(glob.glob(sem_anel_directory + "/*.bmp")), sem_anel_directory))
@@ -36,7 +38,7 @@ if __name__ == "__main__":
         p.flip_left_right(probability=0.5)
         p.zoom_random(probability=0.5, percentage_area=0.95)
         p.resize(probability=1.0, width=246, height=205)
-        p.sample(250)
+        p.sample(n_augment)
         print("Data augmentation done on directory '%s'." % (sem_anel_directory))
 
         model = Agent()
@@ -62,7 +64,7 @@ if __name__ == "__main__":
         print("Dataset ready for training. Initiating fit process...")
 
         model.train(imgs, labels)
-        
+
         if len(sys.argv) > 3:
             save_name = sys.argv[3]
         else:
