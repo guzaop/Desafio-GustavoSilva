@@ -15,6 +15,7 @@ Ferramentas utilizadas:
 -Cv2 (https://github.com/opencv/opencv/tree/master/samples/python)
 
 #Obs: o programa só funcionara com imagens bmp;
+
 #Obs: o arquivo model-3000.h5 contém os pesos da rede neural treinada com 3000 imagens
 
 Para treinar utilize train.py:
