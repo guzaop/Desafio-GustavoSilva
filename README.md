@@ -2,7 +2,7 @@
 
 Código desenvolvido por: Gustavo Bandeira da Silva
 
-O código foi dividido entre cinco arquivos: model, train e teste
+O código foi dividido entre tres arquivos: model, train e teste
 
 Ferramentas utilizadas:
 
@@ -14,9 +14,9 @@ Ferramentas utilizadas:
 
 -Cv2 (https://github.com/opencv/opencv/tree/master/samples/python)
 
-#Obs: o programa só funcionara com imagens bmp;
+#Obs1: o programa só funcionara com imagens bmp;
 
-#Obs: o arquivo model-3000.h5 contém os pesos da rede neural treinada com 3000 imagens
+#Obs2: o arquivo model-3000.h5 contém os pesos da rede neural treinada com 3000 imagens
 
 Para treinar utilize train.py:
 Usage: python train.py <com_anel_directory> <sem_anel_directory> [model_save_name.h5]
@@ -37,6 +37,7 @@ O arquivo train.py contém a parte de treinamento do modelo. Para realizar o tre
 - Modelagem e validação das arquiteturas: (Construção, Treinamento...)
 
 - Deploy;
+
 
 O arquivo teste.py carrega os pesos treinados da rede neural. Em seguida, procura os arquivos de teste no diretório escolhido e utiliza da predição carregada do arquivo para processar se uma imagem possui um anel ou não.
 
